@@ -4,7 +4,6 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
 import Menu from './components/Menu';
-import Features from './components/Features';
 import Testimonials from './components/Testimonials';
 import Location from './components/Location';
 import Contact from './components/Contact';
@@ -111,7 +110,6 @@ const App: React.FC = () => {
         <Hero />
         <About />
         <Menu onAddToCart={addToCart} />
-        <Features />
         <Testimonials />
         <Location />
         <Contact />
