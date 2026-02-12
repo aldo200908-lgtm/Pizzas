@@ -1,7 +1,0 @@
-{
-  "name": "Jhony Pizzas - Sandia",
-  "description": "Pizzas artesanales y smoothies refrescantes en el corazón de Sandia, Puno. Sabor auténtico y tradición local.",
-  "requestFramePermissions": [
-    "geolocation"
-  ]
-}
