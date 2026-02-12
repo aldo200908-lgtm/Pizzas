@@ -7,66 +7,82 @@ interface MenuProps {
 }
 
 const pizzaItems: PizzaItem[] = [
-  { id: 'p1', name: 'Margarita Jhony', description: 'Tomates, albahaca y mozzarella.', price: 26, image: 'https://images.unsplash.com/photo-1574071318508-1cdbad80ad38?auto=format&fit=crop&w=600&q=80' },
-  { id: 'p2', name: 'Pepperoni Supreme', description: 'Capa extra de pepperoni premium.', price: 32, image: 'https://images.unsplash.com/photo-1628840042765-356cda07504e?auto=format&fit=crop&w=600&q=80' },
-  { id: 'p3', name: 'Selva & Sierra', description: 'Jamón regional y piña de Sandia.', price: 30, image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=600&q=80' },
-  { id: 'p4', name: 'Jhony Especial', description: 'Chorizo, tocino y jamón.', price: 35, image: 'https://images.unsplash.com/photo-1541745537411-b8046dc6d66c?auto=format&fit=crop&w=600&q=80' },
+  { id: 'p1', name: 'Margarita Jhony', description: 'Tomates, albahaca fresca y mozzarella premium.', price: 26, image: 'https://images.unsplash.com/photo-1574071318508-1cdbad80ad38?auto=format&fit=crop&w=600&q=80' },
+  { id: 'p2', name: 'Pepperoni Supreme', description: 'Doble capa de pepperoni sobre queso fundido.', price: 32, image: 'https://images.unsplash.com/photo-1628840042765-356cda07504e?auto=format&fit=crop&w=600&q=80' },
+  { id: 'p3', name: 'Selva & Sierra', description: 'Jamón regional, piña de Sandia y un toque secreto.', price: 30, image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=600&q=80' },
+  { id: 'p4', name: 'Jhony Especial', description: 'Chorizo artesanal, tocino ahumado y jamón.', price: 35, image: 'https://images.unsplash.com/photo-1541745537411-b8046dc6d66c?auto=format&fit=crop&w=600&q=80' },
 ];
 
 const smoothieItems: PizzaItem[] = [
-  { id: 's1', name: 'Green Valley', description: 'Espinaca, piña y miel pura.', price: 15, image: 'https://images.unsplash.com/photo-1543573852-1a71a6ce19bc?auto=format&fit=crop&w=600&q=80' },
-  { id: 's2', name: 'Tropical Sandia', description: 'Mango, maracuyá y naranja.', price: 15, image: 'https://images.unsplash.com/photo-1553530666-ba11a7da3888?auto=format&fit=crop&w=600&q=80' },
-  { id: 's3', name: 'Sunrise Berry', description: 'Mix de frutos rojos locales.', price: 16, image: 'https://images.unsplash.com/photo-1481671703460-040cb8a2d909?auto=format&fit=crop&w=600&q=80' },
+  { id: 's1', name: 'Green Valley', description: 'Espinaca del valle, piña y miel pura de abeja.', price: 15, image: 'https://images.unsplash.com/photo-1543573852-1a71a6ce19bc?auto=format&fit=crop&w=600&q=80' },
+  { id: 's2', name: 'Tropical Sandia', description: 'Mango, maracuyá y naranja recién exprimida.', price: 15, image: 'https://images.unsplash.com/photo-1553530666-ba11a7da3888?auto=format&fit=crop&w=600&q=80' },
+  { id: 's3', name: 'Sunrise Berry', description: 'Mix de frutos rojos locales con yogurt natural.', price: 16, image: 'https://images.unsplash.com/photo-1481671703460-040cb8a2d909?auto=format&fit=crop&w=600&q=80' },
 ];
 
 const Menu: React.FC<MenuProps> = ({ onAddToCart }) => {
   const [activeCategory, setActiveCategory] = useState<'pizzas' | 'smoothies'>('pizzas');
 
   return (
-    <section id="menu" className="py-16 bg-[#0a0a0a]">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-5xl font-serif font-bold text-white mb-6">Nuestra Carta</h2>
+    <section id="menu" className="py-24 bg-[#0a0a0a] relative overflow-hidden">
+      {/* Background Decor */}
+      <div className="absolute -top-20 -right-20 opacity-[0.03] select-none pointer-events-none">
+        <span className="text-[300px]">🍕</span>
+      </div>
+
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="text-center mb-20">
+          <h4 className="text-[#c0392b] font-black tracking-[0.4em] text-xs uppercase mb-4">Sandia sobre la mesa</h4>
+          <h2 className="text-5xl md:text-8xl font-serif font-bold text-white mb-10 leading-none">La <span className="text-[#facc15]">Cosecha</span> Sagrada</h2>
           
-          <div className="flex justify-center gap-3">
+          <div className="inline-flex bg-white/5 p-2 rounded-3xl border border-white/10 backdrop-blur-md">
             <button 
               onClick={() => setActiveCategory('pizzas')}
-              className={`px-6 py-2.5 rounded-full text-[10px] font-bold transition-all ${activeCategory === 'pizzas' ? 'bg-[#c0392b] text-white' : 'bg-white/5 text-white/40 hover:bg-white/10'}`}
+              className={`px-8 py-4 rounded-2xl text-[11px] font-black tracking-widest transition-all duration-300 ${activeCategory === 'pizzas' ? 'bg-[#c0392b] text-white shadow-xl scale-105' : 'text-white/40 hover:text-white'}`}
             >
-              PIZZAS
+              PIZZAS ARTESANALES
             </button>
             <button 
               onClick={() => setActiveCategory('smoothies')}
-              className={`px-6 py-2.5 rounded-full text-[10px] font-bold transition-all ${activeCategory === 'smoothies' ? 'bg-[#65a30d] text-white' : 'bg-white/5 text-white/40 hover:bg-white/10'}`}
+              className={`px-8 py-4 rounded-2xl text-[11px] font-black tracking-widest transition-all duration-300 ${activeCategory === 'smoothies' ? 'bg-[#65a30d] text-white shadow-xl scale-105' : 'text-white/40 hover:text-white'}`}
             >
-              SMOOTHIES
+              SMOOTHIES FRESCOS
             </button>
           </div>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
           {(activeCategory === 'pizzas' ? pizzaItems : smoothieItems).map((item) => (
-            <div key={item.id} className="group bg-[#111111] rounded-2xl overflow-hidden border border-white/5 hover:border-[#facc15]/20 transition-all duration-300">
-              <div className="aspect-[4/3] overflow-hidden relative">
+            <div 
+              key={item.id} 
+              className="group bg-[#111111] rounded-[3rem] overflow-hidden border border-white/5 hover:border-[#facc15]/30 transition-all duration-500 pizza-hover-card flex flex-col h-full"
+            >
+              <div className="aspect-square overflow-hidden relative">
                 <img 
                   src={item.image} 
                   alt={item.name} 
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
-                <div className="absolute top-2 right-2 bg-black/80 backdrop-blur-sm px-2 py-0.5 rounded-md text-[#facc15] font-bold text-xs">
-                  S/. {item.price}
+                <div className="absolute bottom-4 left-4 bg-black/80 backdrop-blur-md text-[#facc15] px-4 py-2 rounded-full font-black text-xs shadow-2xl border border-white/10">
+                  S/. {item.price.toFixed(2)}
                 </div>
+                {/* Visual indicator for 'Hot' */}
+                {activeCategory === 'pizzas' && (
+                  <div className="absolute top-4 right-4 bg-[#c0392b] text-white text-[9px] font-black px-3 py-1 rounded-full animate-pulse">
+                    NUEVA
+                  </div>
+                )}
               </div>
-              <div className="p-4">
-                <h3 className="text-sm md:text-base font-bold mb-1 truncate">{item.name}</h3>
-                <p className="text-white/30 text-[10px] mb-4 line-clamp-1">{item.description}</p>
+              
+              <div className="p-8 text-center flex flex-col flex-grow">
+                <h3 className="text-xl font-bold mb-3 group-hover:text-[#facc15] transition-colors">{item.name}</h3>
+                <p className="text-white/40 text-xs mb-8 leading-relaxed h-10 line-clamp-2">{item.description}</p>
                 <button 
                   onClick={() => onAddToCart(item)}
-                  className={`w-full py-2.5 rounded-lg font-bold text-[9px] tracking-widest uppercase transition-all active:scale-95 ${
-                    activeCategory === 'pizzas' ? 'bg-white/5 text-white hover:bg-[#c0392b]' : 'bg-white/5 text-white hover:bg-[#65a30d]'
+                  className={`mt-auto w-full py-5 rounded-[1.5rem] font-black text-[11px] tracking-widest uppercase transition-all shadow-xl active:scale-95 border border-white/5 ${
+                    activeCategory === 'pizzas' ? 'bg-[#c0392b] text-white hover:bg-white hover:text-black' : 'bg-[#65a30d] text-white hover:bg-white hover:text-black'
                   }`}
                 >
-                  AÑADIR
+                  Añadir al Horno
                 </button>
               </div>
             </div>
