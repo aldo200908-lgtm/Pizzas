@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jhony Pizzas | Sabor Artesanal en Sandia, Puno</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Pizzas artesanales y smoothies refrescantes en el corazón de Sandia, Puno. Sabor auténtico, horno de piedra y delivery rápido." />
+    <meta name="keywords" content="pizza sandia, jhony pizzas, delivery sandia, pizzas puno, smoothies naturales" />
+    <meta name="author" content="Jhony Pizzas" />
+
+    <!-- Open Graph / Facebook / WhatsApp -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://jhonypizzas.pe/" />
+    <meta property="og:title" content="Jhony Pizzas | Las mejores de Sandia" />
+    <meta property="og:description" content="¿Antojo de algo especial? Prueba nuestras pizzas artesanales y smoothies. ¡Haz tu pedido por WhatsApp aquí!" />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1200&q=80" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content="Jhony Pizzas - Sabor Artesanal" />
+    <meta property="twitter:description" content="Horno de piedra y frutas frescas de Sandia. El sabor que estabas buscando." />
+    <meta property="twitter:image" content="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1200&q=80" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Montserrat', sans-serif;
+        background-color: #0a0a0a;
+        color: #fdfcf0;
+      }
+      h1, h2, h3, .font-serif {
+        font-family: 'Playfair Display', serif;
+      }
+      section {
+        scroll-margin-top: 80px;
+      }
+      .fade-in {
+        animation: fadeIn 1.2s ease-out forwards;
+      }
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      @keyframes scaleIn {
+        from { opacity: 0; transform: scale(0.9); }
+        to { opacity: 1; transform: scale(1); }
+      }
+      @keyframes shimmer {
+        0% { transform: translateX(-150%) skewX(-25deg); }
+        100% { transform: translateX(250%) skewX(-25deg); }
+      }
+      .shimmer-hover {
+        position: relative;
+        overflow: hidden;
+      }
+      .shimmer-hover::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 60%;
+        height: 100%;
+        background: linear-gradient(
+          to right, 
+          transparent, 
+          rgba(255, 255, 255, 0.5), 
+          transparent
+        );
+        transform: translateX(-150%) skewX(-25deg);
+        transition: none;
+      }
+      .shimmer-hover:hover::after {
+        animation: shimmer 1s infinite;
+      }
+      .animate-fadeIn {
+        animation: fadeIn 0.4s ease-out forwards;
+      }
+      .animate-scaleIn {
+        animation: scaleIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
